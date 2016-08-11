@@ -14,7 +14,7 @@ import com.founder.aliyun.util.MyWriter;
 
 public class GetHost {
 	public static void main(String[] args) throws IOException {
-		FileReader reader = new FileReader("C:\\Users\\mahuan\\git\\aliyun\\近期热点_奥运 金牌_论坛");
+		FileReader reader = new FileReader("C:\\Users\\mahuan\\git\\aliyun\\近期热点_奥运 金牌_论坛"); 
 		BufferedReader reader1 = new BufferedReader(reader);
 		reader = new FileReader("C:\\Users\\mahuan\\git\\aliyun\\论坛");
 		BufferedReader reader2 = new BufferedReader(reader);
