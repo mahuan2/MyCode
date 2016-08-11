@@ -12,9 +12,7 @@ import com.founder.aliyun.entry.Topic;
 import com.founder.aliyun.service.GetKeywords;
 import com.founder.aliyun.service.QueryTopicList;
 import com.founder.aliyun.service.Search;
-import com.founder.aliyun.util.JsonTools;
 import com.founder.aliyun.util.MyWriter;
-import com.founder.aliyun.util.Page;
 
 @SuppressWarnings("restriction")
 public class AliDownload {
