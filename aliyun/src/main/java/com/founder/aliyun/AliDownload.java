@@ -35,8 +35,8 @@ public class AliDownload {
 					System.out.println("SpiderTopic :" + spiderTopic.id + " " + spiderTopic.name);
 					params.put("spiderTopicId", spiderTopic.id);
 					params.put("pageSize", "100");
-					params.put("pubTimeBegin", "2016-08-08%2023:59:59");
-					params.put("pubTimeEnd", "2016-08-09%2023:59:59");
+					params.put("pubTimeBegin", "2016-08-10%2023:59:59");
+					params.put("pubTimeEnd", "2016-08-11%2023:59:59");
 					// 获取数据
 					MyWriter writer = new MyWriter(topic.name + File.separator + keyword.keyword + "_" + spiderTopic.name);
 					int pageCount = Search.getPageCount(params);
