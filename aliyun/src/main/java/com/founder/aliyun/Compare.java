@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class Compare {
 	public static void main(String[] args) throws IOException {
-		String tag = "微信";
+		String tag = "新闻";
 
 		FileReader reader = new FileReader("C:\\Users\\mahuan\\git\\aliyun\\近期热点\\湖北 爆炸_" + tag + "_uniq");
 		BufferedReader reader1 = new BufferedReader(reader);
