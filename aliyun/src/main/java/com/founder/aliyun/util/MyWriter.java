@@ -10,6 +10,8 @@ public class MyWriter {
 
 	public MyWriter(String filePath) throws IOException {
 		File file = new File(filePath);
+		if (!file.getParentFile().exists())
+			file.getParentFile().mkdirs();
 		if (!file.exists())
 			file.createNewFile();
 		writer = new BufferedWriter(new FileWriter(file));

@@ -9,18 +9,20 @@ import java.util.Set;
 
 public class Compare {
 	public static void main(String[] args) throws IOException {
-		FileReader reader = new FileReader("C:\\Users\\mahuan\\git\\aliyun\\近期热点_奥运 金牌_微博");
+		String tag = "微信";
+
+		FileReader reader = new FileReader("C:\\Users\\mahuan\\git\\aliyun\\近期热点\\湖北 爆炸_" + tag + "_uniq");
 		BufferedReader reader1 = new BufferedReader(reader);
-		reader = new FileReader("C:\\Users\\mahuan\\git\\aliyun\\微博");
+		reader = new FileReader("C:\\Users\\mahuan\\git\\aliyun\\近期热点\\" + tag + "_uniq");
 		BufferedReader reader2 = new BufferedReader(reader);
 		Set<String> set1 = new HashSet<String>(20000);
 		Set<String> set2 = new HashSet<String>(20000);
 		String line = "";
 		while ((line = reader1.readLine()) != null) {
-			set1.add(line.split(" ")[1]);
+			set1.add(line);
 		}
 		while ((line = reader2.readLine()) != null) {
-			set2.add(line.split(" ")[1]);
+			set2.add(line);
 		}
 		int countAli = 0;
 		int countFo = 0;
@@ -38,10 +40,8 @@ public class Compare {
 			if (!set1.contains(s2))
 				countFo++;
 		}
-		System.out.println(set1.size());
-		System.out.println(set2.size());
 		System.out.println(countAli);
-		System.out.println(countFo);
 		System.out.println(countAll);
+		System.out.println(countFo);
 	}
 }

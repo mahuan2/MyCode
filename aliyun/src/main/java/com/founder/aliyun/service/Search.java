@@ -24,6 +24,8 @@ public class Search {
 			asset.url = (String) map.get("url");
 			asset.pubTime = (String) map.get("pubTime");
 			asset.createdAt = (String) map.get("createdAt");
+			asset.monitorKeywords = (String) map.get("monitorKeywords");
+			asset.monitorKeywordId = (Integer) map.get("monitorKeywordId");
 			assets.add(asset);
 		}
 		Thread.sleep(200);

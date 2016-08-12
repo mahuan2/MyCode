@@ -34,6 +34,7 @@ public class AliDownload {
 				for (SpiderTopic spiderTopic : keyword.spiderTopics) {
 					System.out.println("SpiderTopic :" + spiderTopic.id + " " + spiderTopic.name);
 					params.put("spiderTopicId", spiderTopic.id);
+					params.put("monitorKeywordId", keyword.id);
 					params.put("pageSize", "100");
 					params.put("pubTimeBegin", "2016-08-10%2023:59:59");
 					params.put("pubTimeEnd", "2016-08-11%2023:59:59");
@@ -45,12 +46,15 @@ public class AliDownload {
 						params.put("toPage", i);
 						List<Asset> assets = Search.get(params);
 						for (Asset asset : assets) {
-							writer.writeLine(asset.from.trim() + " " + asset.url.trim() + " " + asset.createdAt.trim() + " " + asset.pubTime.trim());
+							if (asset.monitorKeywords.equals(keyword.keyword)) {
+								writer.writeLine(asset.from.trim() + " " + asset.url.trim() + " " + asset.createdAt.trim() + " " + asset.pubTime.trim());
+							}
 						}
 						params.remove("toPage");
 					}
 					writer.close();
 					params.remove("spiderTopic");
+					params.remove("monitorKeywordId");
 					params.remove("pageSize");
 					params.remove("pubTimeBegin");
 					params.remove("pubTimeEnd");
